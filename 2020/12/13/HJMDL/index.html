@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BugKu 皇家马德里 WP | Sapphire的世界</title><meta name="author" content="LCJ"><meta name="copyright" content="LCJ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="思路及方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BugKu 皇家马德里 WP">
+<meta property="og:url" content="http://example.com/2020/12/13/HJMDL/index.html">
+<meta property="og:site_name" content="Sapphire的世界">
+<meta property="og:description" content="思路及方法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.alphacoders.com/998/thumb-1920-998794.jpg">
+<meta property="article:published_time" content="2020-12-13T14:39:45.000Z">
+<meta property="article:modified_time" content="2020-12-13T14:40:58.461Z">
+<meta property="article:author" content="LCJ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.alphacoders.com/998/thumb-1920-998794.jpg"><link rel="shortcut icon" href="/img/skull.png"><link rel="canonical" href="http://example.com/2020/12/13/HJMDL/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: {"text":"你是真的帅,当然我也是,别再点了没有字了,真的没有了,别点了我是帅哥,循环~","fontSize":"15px"},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-12-13 22:40:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/22.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小卢的首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://images.alphacoders.com/998/thumb-1920-998794.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Sapphire的世界</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 小卢的首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">BugKu 皇家马德里 WP</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-13T14:39:45.000Z" title="发表于 2020-12-13 22:39:45">2020-12-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-13T14:40:58.461Z" title="更新于 2020-12-13 22:40:58">2020-12-13</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>#<font color="#00dddd">皇家马德里</font><br /><br>##1.初步<br>###拿到压缩包后解压。得到两个文件，falg.zip和key.zip，尝试打开两个文件但是发现都加密了，根据文件名字提示，我就先从key.zip入手。遇到加密的压缩包应该先尝试一下是否是伪加密，用Winhex打开，搜索十六进制数值<font color="#dd0000">504B0102</font><br />,对其后面的第九第十位改为0<br>###即<img src="https://s3.ax1x.com/2020/12/13/rmYKzt.png">修改后可以直接打开，打开后得到falg.jpg，发现打不开，用Winhex打开得到<br>####BBAA AA ABBA BABA ABA BABB ABBA B BBB<br>##2.第二步<br>###根据密码表现,猜测是培根密码或者摩斯电吗加密，尝试培根无果，于是尝试莫斯电码，先把A变成-B变成.  结果解出来的东西并不像一个正规的东西，于是反着来把A变成点B变成杠，得到<font color="#dd0000">–.. .. .–. -.-. .-. -.– .–. - —</font><br />解出ZIPCRYPTO. 而ZIPCRYPTO就是falg.zip的密码，成功解压falg.zip.解出两个文件flag.png 和密码.jpg。<br>###打开密码.jpg图片看到上面有一个提示lsb隐写，<img src="https://s3.ax1x.com/2020/12/13/rmYGdg.jpg">但是一般lsb隐写多用于bmp文件和png文件。所以先尝试别的方法。根据题目本来给的提示：好像用到了好几次base，用Winhex打开密码.jpg，<img src="https://s3.ax1x.com/2020/12/13/rmYOSI.png">由于FFD9是jpg文件的文件尾，那么后面的内容就应该是一些需要解密的东西了,结合题目提示，将文件尾部之后的内容十六进制翻译得到：5’:{hAY:[UvvR base家族！！！！！1把无关内容删掉得<font color="#0000dd">5’:{hAY:[UvvR</font><br />由于提示要用几次base,先base92得到<font color="#0000dd">6281M:Z;wS</font><br />再拿去经过base91解密得到真正隐藏的字符<font color="#dd00dd">lsbjiami</font><br />。<br>##3.第三步<br>###那下一步就要着手flag.png了，尝试了各种方法依旧无果，卡了一天，于是决定去看看别的png隐写题是怎么解的，终于找到一个之前从来没用过的解密方式，具体参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/fuzz_nancheng/article/details/53384353">https://blog.csdn.net/fuzz_nancheng/article/details/53384353</a><br>###于是便着手搭建环境，此处需要脚本，脚本地址<a target="_blank" rel="noopener" href="https://github.com/livz/cloacked-pixel">https://github.com/livz/cloacked-pixel</a><br>###此处我参考的上面那篇博客，也用的kali，且python版本2.7，由于前一晚上电脑出问题了导致环境都崩了，于是得重新弄，想要用到脚本，必须得用到PIL库,prycryto，pycrytodome<br>###而大家百度到的什么pip install crypto就不要用了，安装的东西都是残缺的，直接pip install xxxxx，如果没有换源的话可以百度一下pip换源，于是变成这样 pip install xxxxx -i 源的地址，这样下载速度会很快，否则可能会报times out的错误，都安装好了之后就可以使用脚本了，将上面链接下载的东西放入kali，解压，在大文件夹下进行基本操作: python2 lsb.py extract flag.png &lt;解密下的内容放的文件&gt; lsbjiami（这是密码）<br>##如<font color="#dd00dd">python2 lsb.py extract flag.png Sapphire.txt lsbjiami</font><br />，运行成功后会出现一个文件，打开发现第一行写的是“flag不在这”，我们直接拉到底就能看到flag了，完结撒花。<br>###PS:<font color="#dd0000">如若运行脚本出错，把错误提示拿去百度翻译，看看自己少了什么内容，继续百度找方法安装即可。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">LCJ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/12/13/HJMDL/">http://example.com/2020/12/13/HJMDL/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">银河系</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Sapphire的世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://images.alphacoders.com/998/thumb-1920-998794.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/12/06/Baby_web/"><img class="next-cover" src="https://images8.alphacoders.com/642/thumb-350-642527.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Baby_web Wp</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/22.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">LCJ</div><div class="author-info__description">奇妙乐园</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">小卢的博客</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/12/13/HJMDL/" title="BugKu 皇家马德里 WP"><img src="https://images.alphacoders.com/998/thumb-1920-998794.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BugKu 皇家马德里 WP"/></a><div class="content"><a class="title" href="/2020/12/13/HJMDL/" title="BugKu 皇家马德里 WP">BugKu 皇家马德里 WP</a><time datetime="2020-12-13T14:39:45.000Z" title="发表于 2020-12-13 22:39:45">2020-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/06/Baby_web/" title="Baby_web Wp"><img src="https://images8.alphacoders.com/642/thumb-350-642527.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Baby_web Wp"/></a><div class="content"><a class="title" href="/2020/12/06/Baby_web/" title="Baby_web Wp">Baby_web Wp</a><time datetime="2020-12-06T08:39:45.000Z" title="发表于 2020-12-06 16:39:45">2020-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/23/LSB%E9%9A%90%E5%86%99/" title="LSB隐写"><img src="https://images3.alphacoders.com/936/936814.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LSB隐写"/></a><div class="content"><a class="title" href="/2020/10/23/LSB%E9%9A%90%E5%86%99/" title="LSB隐写">LSB隐写</a><time datetime="2020-10-23T12:50:44.000Z" title="发表于 2020-10-23 20:50:44">2020-10-23</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By LCJ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="false"></script></div></body></html>
